@@ -9,9 +9,31 @@ body {
     min-height: 50vh;
 }
 
+#sysMsg {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Controls the speed and feel */
+}
+
+#sysMsg.hidden {
+  opacity: 0;
+}
+
+#text1{
+  width: 300px; 
+  height: 40px; 
+  background-color: #c7a8a8;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .3rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-size: .875rem;
+  font-weight: 550;
+  text-align: left;
+
+
+}
 
 button {
-    
   background-color: #e9d2d2;
   border: 1px solid rgb(209,213,219);
   border-radius: .5rem;
@@ -32,3 +54,4 @@ button:active{
     background-color: rgb(113, 97, 97);
 
 }
+
