@@ -45,7 +45,7 @@ function createPlan(plan,id){
     
     // Extra
     document.getElementById("textBox").value='';
-    window.alert("Added plan" + "" + id);
+    window.alert("Added plan no. " + "" + id);
     id++;
 }
 
