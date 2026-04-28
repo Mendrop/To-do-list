@@ -3,11 +3,14 @@ let id =1;
 // Toggle "Add" button on "Enter" keypress
 const input = document.getElementById('textBox');
 const enterBtn = document.getElementById('bt1');
-input.addEventListener("keydown", function(event){
-    if(event.key==="Enter"){
-        enterBtn.click();
-    }
-})
+input.addEventListener("keydown",function(event){
+                                    if(event.key==="Enter"){
+                                        enterBtn.click();
+                                    }
+                                }
+)
+
+
 
 // Input text from user and pass it to createPlan()
 function add(){
@@ -25,12 +28,23 @@ function add(){
 function createPlan(plan,id){
     // Create checkbox
     const checkbox = document.createElement('input');
+    checkbox.classList.add("checkbox");
     checkbox.type = 'checkbox';
     checkbox.id = 'cb' + id;
+
+    // Checkbox event handler
+    checkbox.addEventListener('change', (event) => {
+                                    if(event.target.checked){
+                                                checkboxText.style.textDecoration = "line-through";
+                                    }
+                                }            
+                                        
+    )
 
     // Create checkbox text (label)
     const checkboxText = document.createElement('label');
     checkboxText.id = 'cbText' + id;
+    checkboxText.classList.add("checkboxtext");
     checkboxText.contentEditable = "true";
     checkboxText.style.cursor = "pointer";
     checkboxText.append(document.createTextNode(plan));
@@ -47,9 +61,28 @@ function createPlan(plan,id){
     document.getElementById("textBox").value='';
     window.alert("Added plan no. " + "" + id);
     id++;
+    
+    // Checkbox event handler
+    checkbox.addEventListener('change', (event) => {
+                                    if(event.target.checked){
+                                                checkboxText.style.textDecoration = "line-through";
+                                                checkboxText.style.opacity = "0.5";
+                                    }
+                                    else{
+                                                checkboxText.style.textDecoration = "";
+                                                checkboxText.style.opacity = "1";
+
+                                        
+                                    }
+                                }            
+                                        
+    )
+    
 }
 
 function clearPlans(){
     document.getElementById("planContainer").innerHTML = "";
     document.getElementById("textBox").value='';
+    sysMsg.innerHTML="";
+    id=1;
 }

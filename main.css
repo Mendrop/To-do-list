@@ -18,6 +18,21 @@ body {
   opacity: 0;
 }
 
+.checkbox{
+  color: rgb(255, 175, 55);
+  accent-color: rgb(165, 111, 30);
+}
+
+.checkboxtext {
+  display: inline-flex;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 12px;
+  background-color: rgb(206, 179, 135);
+  padding: 5px;
+  border-radius: 4px;
+}
+
 #textBox{
   width: 300px; 
   height: 40px; 
