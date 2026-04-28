@@ -49,13 +49,29 @@ function createPlan(plan,id){
     checkboxText.style.cursor = "pointer";
     checkboxText.append(document.createTextNode(plan));
 
+    // Create delete button next to each plan
+    const delBut = document.createElement('button');
+    delBut.id = 'del' + id;
+    delBut.classList.add('delBut');
+    delBut.innerHTML = "x";
+
+    // Create a row of plan
+    const row = document.createElement('div');
+    row.className = 'planRow';
+    row.append(checkbox,checkboxText,delBut);
+        
+
     // Append checkbox and checkbox text to planContainer(div)
-    const cbDiv = document.getElementById("planContainer");
+    const planContainer = document.getElementById("planContainer");
     const br = document.createElement("br");
 
-    cbDiv.append(checkbox);
-    cbDiv.append(checkboxText);
-    cbDiv.append(br)
+    planContainer.append(row);
+    planContainer.append(br);
+
+    // planContainer.append(checkbox);
+    // planContainer.append(checkboxText);
+    // planContainer.append(delBut);
+    // planContainer.append(br);
     
     // Extra
     document.getElementById("textBox").value='';

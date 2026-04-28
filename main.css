@@ -33,6 +33,18 @@ body {
   border-radius: 4px;
 }
 
+.delBut {
+  float: right;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  background-color: rgb(206, 179, 135);
+  padding: 5px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+
+
 #textBox{
   width: 300px; 
   height: 40px; 
